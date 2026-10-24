@@ -40,3 +40,10 @@ updates:
       # Same rule as `@types/node` above: Node majors are upgraded on purpose.
       - dependency-name: node
         update-types: [version-update:semver-major]
+      # nginx numbers its stable line with even minors (1.30) and mainline with
+      # odd ones (1.31); Dependabot can't tell them apart. Take patches and
+      # digests automatically, and move to the next stable line by hand.
+      - dependency-name: nginxinc/nginx-unprivileged
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor

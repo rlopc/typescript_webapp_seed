@@ -57,13 +57,13 @@ The technical decisions behind this seed, with their status and the evidence the
 
 ### Delivery & security
 
-| #   | Decision                                                                              | Status      | Revisit when                                                          |
-| --- | ------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------- |
-| 18  | Multi-stage Docker image on `nginx-unprivileged`, base images pinned by tag + digest. | Final       | —                                                                     |
-| 19  | Baseline CSP and security headers in nginx; HSTS left to the TLS terminator.          | Provisional | The deployment target is known (CDN, ingress) and headers move there. |
-| 20  | CI tests the built image with the e2e suite (`E2E_BASE_URL`).                         | Final       | —                                                                     |
-| 21  | No release/versioning tool and no deploy workflow.                                    | Provisional | A derived project defines its deployment target or needs versions.    |
-| 22  | Dependabot for npm (3-day cooldown), Actions and Docker; Node majors ignored.         | Final       | —                                                                     |
+| #   | Decision                                                                                       | Status      | Revisit when                                                          |
+| --- | ---------------------------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------- |
+| 18  | Multi-stage Docker image on `nginx-unprivileged`, base images pinned by tag + digest.          | Final       | —                                                                     |
+| 19  | Baseline CSP and security headers in nginx; HSTS left to the TLS terminator.                   | Provisional | The deployment target is known (CDN, ingress) and headers move there. |
+| 20  | CI tests the built image with the e2e suite (`E2E_BASE_URL`).                                  | Final       | —                                                                     |
+| 21  | No release/versioning tool and no deploy workflow.                                             | Provisional | A derived project defines its deployment target or needs versions.    |
+| 22  | Dependabot for npm (3-day cooldown), Actions and Docker; Node majors and nginx minors ignored. | Final       | —                                                                     |
 
 ## Sources
 
@@ -98,5 +98,7 @@ Open items, in priority order:
    devcontainer and `engines`.
 3. **Accessibility lint** (row 13) — re-check whether `eslint-plugin-jsx-a11y` (or a
    maintained fork) supports ESLint 10.
-4. **Deployment** (rows 19, 21) — when a derived project knows its target, add the deploy
+4. **nginx stable line** (row 22) — when nginx releases its next stable line (1.32), bump
+   the runtime image tag and digest in the Dockerfile by hand.
+5. **Deployment** (rows 19, 21) — when a derived project knows its target, add the deploy
    workflow and move security headers to the edge if appropriate.

@@ -695,6 +695,9 @@ ecosystems: npm packages, GitHub Actions, and the Docker base images.
 - **No Node majors** — Dependabot ignores major bumps of the `node` image and `@types/node`.
   Moving to a new Node major means changing `.nvmrc`, `engines`, the Dockerfile and the
   types together, once the new line is LTS; a lone bump would leave them out of step.
+- **No nginx minors** — nginx marks its stable line with even minor versions (1.30) and its
+  mainline (development) line with odd ones (1.31), which Dependabot can't distinguish. It
+  applies patches and digest updates only; moving to the next stable line (1.32) is manual.
 
 ### Learn more 📚
 
