@@ -1,0 +1,5 @@
+{
+  // Skip everything Git ignores (node_modules, test reports, build output), so
+  // generated Markdown is never linted.
+  "gitignore": true,
+}

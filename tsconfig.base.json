@@ -1,0 +1,24 @@
+{
+  // Strictness shared by every program in the repo. Environment-specific
+  // options (lib, module, types) live in the configs that extend this one.
+  "compilerOptions": {
+    "target": "es2023",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    // Type-check only: Vite emits the JavaScript.
+    "noEmit": true
+  }
+}

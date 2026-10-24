@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Test & coverage
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# Caches
+.eslintcache
+
+# Environment: local overrides (`.env.local`, `.env.production.local`, ...)
+# are machine-specific and may hold private values. See `.env.example`.
+*.local
+
+# Local, machine-specific tool settings
+.claude/settings.local.json
+
+# Logs
+*.log
+
+# OS files
+.DS_Store

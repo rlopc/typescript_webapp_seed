@@ -1,0 +1,27 @@
+.header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav a[aria-current='page'] {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.main {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+}

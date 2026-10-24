@@ -1,0 +1,39 @@
+name: 🐛 Bug report
+description: Report incorrect behavior.
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug clearly and concisely.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: The page (URL path) and the steps that trigger the problem.
+      placeholder: |
+        1. Go to /...
+        2. Click ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where you saw it.
+      placeholder: |
+        - App version / commit:
+        - Browser and version:
+        - OS / device:
+    validations:
+      required: true

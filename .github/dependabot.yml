@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    # Wait longer than pnpm's `minimumReleaseAge` (1 day), so an update PR is
+    # never rejected by the install's own supply-chain check.
+    cooldown:
+      default-days: 3
+    groups:
+      # Group minor + patch into a single PR; majors go separately.
+      dependencies:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        update-types:
+          - minor
+          - patch
+
+  # Base images in the Dockerfile: bumps the tag and the pinned digest.
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly

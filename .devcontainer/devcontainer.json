@@ -1,0 +1,24 @@
+{
+  "name": "typescript-webapp-seed",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "none",
+      "nodeGypDependencies": false
+    }
+  },
+  // Vite dev server and `vite preview` (used by the e2e tests).
+  "forwardPorts": [5173, 4173],
+  "postCreateCommand": "corepack enable && pnpm install --frozen-lockfile && pnpm exec playwright install --with-deps",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "vitest.explorer",
+        "ms-playwright.playwright"
+      ]
+    }
+  }
+}

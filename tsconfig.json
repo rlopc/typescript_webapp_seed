@@ -1,0 +1,10 @@
+{
+  // Solution-style root: the code is split into two programs with different
+  // environments (browser vs Node), each with its own config. `tsc --build`
+  // and the editor follow these references.
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

@@ -1,0 +1,8 @@
+# Enforce the `engines` field in package.json instead of only warning about it:
+# an install on an unsupported Node or pnpm fails here rather than in CI.
+engineStrict: true
+
+# Supply-chain guard: never resolve a version published less than a day ago
+# (in minutes). Most malicious releases are caught and unpublished within
+# hours. Dependabot's `cooldown` waits longer, so its PRs always pass this.
+minimumReleaseAge: 1440
