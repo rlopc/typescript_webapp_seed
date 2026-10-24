@@ -63,7 +63,7 @@ The technical decisions behind this seed, with their status and the evidence the
 | 19  | Baseline CSP and security headers in nginx; HSTS left to the TLS terminator.          | Provisional | The deployment target is known (CDN, ingress) and headers move there. |
 | 20  | CI tests the built image with the e2e suite (`E2E_BASE_URL`).                         | Final       | —                                                                     |
 | 21  | No release/versioning tool and no deploy workflow.                                    | Provisional | A derived project defines its deployment target or needs versions.    |
-| 22  | Dependabot for npm (3-day cooldown), Actions and Docker.                              | Final       | —                                                                     |
+| 22  | Dependabot for npm (3-day cooldown), Actions and Docker; Node majors ignored.         | Final       | —                                                                     |
 
 ## Sources
 

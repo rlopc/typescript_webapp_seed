@@ -9,6 +9,11 @@ updates:
     # never rejected by the install's own supply-chain check.
     cooldown:
       default-days: 3
+    # A Node major is a deliberate upgrade (`.nvmrc`, `engines`, Dockerfile and
+    # these types together; see docs/DECISIONS.md, row 5), never a lone bump.
+    ignore:
+      - dependency-name: '@types/node'
+        update-types: [version-update:semver-major]
     groups:
       # Group minor + patch into a single PR; majors go separately.
       dependencies:
@@ -31,3 +36,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # Same rule as `@types/node` above: Node majors are upgraded on purpose.
+      - dependency-name: node
+        update-types: [version-update:semver-major]

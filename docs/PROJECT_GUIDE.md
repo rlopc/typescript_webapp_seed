@@ -692,6 +692,9 @@ ecosystems: npm packages, GitHub Actions, and the Docker base images.
   the install's own supply-chain check.
 - **Docker updates** keep the pinned base-image digests current; without them, pinning would
   freeze security patches out.
+- **No Node majors** — Dependabot ignores major bumps of the `node` image and `@types/node`.
+  Moving to a new Node major means changing `.nvmrc`, `engines`, the Dockerfile and the
+  types together, once the new line is LTS; a lone bump would leave them out of step.
 
 ### Learn more 📚
 
